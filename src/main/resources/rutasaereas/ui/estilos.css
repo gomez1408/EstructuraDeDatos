@@ -1,0 +1,208 @@
+/* ===== Tema oscuro "radar de aviación" ===== */
+
+.raiz {
+    -fx-font-family: "Segoe UI", "System";
+    -fx-font-size: 13px;
+    -fx-background-color: #06101f;
+}
+
+/* ---------- Mapa ---------- */
+.fondo-mapa {
+    -fx-background-color: radial-gradient(center 50% 45%, radius 75%, #0d2038, #050c18);
+}
+.mapa {
+    -fx-background-color: #081627;
+    -fx-border-color: #1f3b5c;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(56,189,248,0.25), 30, 0.1, 0, 0);
+}
+
+/* ---------- Panel ---------- */
+.scroll-panel, .scroll-panel > .viewport {
+    -fx-background-color: #0b1726;
+    -fx-background: #0b1726;
+}
+.scroll-panel {
+    -fx-border-color: #1c2f47;
+    -fx-border-width: 0 0 0 1;
+}
+.panel {
+    -fx-background-color: linear-gradient(to bottom, #0f1f33, #0b1726);
+}
+.titulo {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f1f7ff;
+}
+.subtitulo {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7dd3fc;
+}
+.estado {
+    -fx-text-fill: #9fb3c8;
+    -fx-font-size: 11.5px;
+    -fx-background-color: #10243a;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10 6 10;
+}
+
+.tarjeta {
+    -fx-background-color: #112338;
+    -fx-background-radius: 10;
+    -fx-border-color: #1d3552;
+    -fx-border-radius: 10;
+    -fx-padding: 12;
+}
+.seccion {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7dd3fc;
+}
+.etiqueta {
+    -fx-text-fill: #b6c7da;
+    -fx-font-size: 12px;
+}
+.ayuda {
+    -fx-text-fill: #6b829b;
+    -fx-font-size: 11px;
+}
+
+/* ---------- ComboBox oscuros ---------- */
+.combo-box {
+    -fx-background-color: #0a192b;
+    -fx-border-color: #27486d;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+.combo-box .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f1f7ff;
+    -fx-prompt-text-fill: #5f7690;
+    -fx-font-weight: bold;
+}
+.combo-box .arrow-button { -fx-background-color: transparent; }
+.combo-box .arrow { -fx-background-color: #7dd3fc; }
+.combo-box-popup .list-view {
+    -fx-background-color: #0a192b;
+    -fx-border-color: #27486d;
+}
+.combo-box-popup .list-cell {
+    -fx-background-color: #0a192b;
+    -fx-text-fill: #e6f1ff;
+}
+.combo-box-popup .list-cell:hover, .combo-box-popup .list-cell:selected {
+    -fx-background-color: #1e4a73;
+}
+
+/* ---------- Botones ---------- */
+.btn-ruta {
+    -fx-background-radius: 8;
+    -fx-padding: 8 4 8 4;
+    -fx-cursor: hand;
+    -fx-content-display: graphic-only;
+}
+.btn-titulo { -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12.5px; }
+.btn-sub    { -fx-text-fill: rgba(255,255,255,0.75); -fx-font-size: 10px; }
+.btn-escalas { -fx-background-color: linear-gradient(to bottom, #3b82f6, #1d4ed8); }
+.btn-rapida  { -fx-background-color: linear-gradient(to bottom, #f59e0b, #c2410c); }
+.btn-barata  { -fx-background-color: linear-gradient(to bottom, #22c55e, #15803d); }
+.btn-ruta:hover { -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.35), 12, 0.2, 0, 0); }
+.btn-ruta:pressed { -fx-opacity: 0.85; }
+
+.btn-sec {
+    -fx-background-color: #183253;
+    -fx-text-fill: #dbeafe;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 7 6 7 6;
+}
+.btn-sec:hover { -fx-background-color: #1f4170; }
+.btn-peligro { -fx-text-fill: #fda4af; }
+.btn-icono {
+    -fx-background-color: #183253;
+    -fx-text-fill: #7dd3fc;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+    -fx-padding: 3 9 3 9;
+}
+.btn-icono:hover { -fx-background-color: #1f4170; }
+
+/* ---------- Tarjetas de totales ---------- */
+.dato {
+    -fx-background-color: linear-gradient(to bottom, #13304f, #0e2238);
+    -fx-background-radius: 10;
+    -fx-border-color: #22476f;
+    -fx-border-radius: 10;
+    -fx-padding: 10 4 9 4;
+}
+.dato-valor {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f1f7ff;
+}
+.dato-costo { -fx-text-fill: #fcd34d; }
+.dato-nombre {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7f9ab5;
+}
+
+/* ---------- Vuelo ---------- */
+.tramo {
+    -fx-font-weight: bold;
+    -fx-text-fill: #f1f7ff;
+}
+.acumulado {
+    -fx-text-fill: #ffb703;
+    -fx-font-weight: bold;
+}
+.progress-bar > .track {
+    -fx-background-color: #0a192b;
+    -fx-background-radius: 6;
+}
+.progress-bar > .bar {
+    -fx-background-color: linear-gradient(to right, #38bdf8, #ffb703);
+    -fx-background-radius: 6;
+    -fx-background-insets: 0;
+}
+
+/* ---------- Detalle ---------- */
+.resultado {
+    -fx-font-family: "Consolas", "Monospaced";
+    -fx-font-size: 12px;
+    -fx-text-fill: #d6e6f7;
+    -fx-control-inner-background: #0a192b;
+    -fx-background-color: #1d3552;
+    -fx-background-radius: 8;
+    -fx-highlight-fill: #1e4a73;
+}
+.resultado .content {
+    -fx-background-color: #0a192b;
+    -fx-background-radius: 8;
+}
+
+/* ---------- Leyenda y extras ---------- */
+.leyenda .label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #9fb3c8;
+}
+.check-box { -fx-text-fill: #b6c7da; }
+.check-box .box {
+    -fx-background-color: #0a192b;
+    -fx-border-color: #27486d;
+    -fx-border-radius: 3;
+}
+.check-box:selected .mark { -fx-background-color: #7dd3fc; }
+
+.tooltip {
+    -fx-background-color: #0f2238;
+    -fx-text-fill: #e6f1ff;
+    -fx-font-size: 12px;
+    -fx-border-color: #38bdf8;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+.scroll-bar { -fx-background-color: transparent; }
+.scroll-bar .thumb { -fx-background-color: #1d3552; -fx-background-radius: 4; }
