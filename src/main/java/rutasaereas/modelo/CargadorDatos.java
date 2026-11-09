@@ -1,17 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package rutasaereas.modelo;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-/**
- *
- * @author gomez
- */
+
 public class CargadorDatos {
      public static Grafo cargar(File archAeropuertos, File archRutas) throws IOException {
         Grafo g = new Grafo();
@@ -25,6 +18,10 @@ public class CargadorDatos {
                 int y = sc.nextInt();
                 String ciudad = sc.next();
                 String pais = sc.next();
+                if (g.existe(codigo)) {
+                    throw new IOException("Aeropuerto duplicado en " + archAeropuertos.getName()
+                            + ": " + codigo);
+                }
                 g.agregarAeropuerto(new Aeropuerto(codigo, x, y, ciudad, pais));
             }
         } catch (NoSuchElementException e) {   // incluye InputMismatchException
@@ -40,6 +37,11 @@ public class CargadorDatos {
                 String destino = sc.next().toUpperCase();
                 int minutos = sc.nextInt();
                 int costo = sc.nextInt();
+                // Dijkstra solo es correcto con pesos NO negativos: se rechaza el archivo
+                if (minutos < 0 || costo < 0) {
+                    throw new IOException("Peso negativo en la ruta " + origen + " -> " + destino
+                            + " (" + minutos + " min, $" + costo + "). Dijkstra requiere pesos no negativos.");
+                }
                 if (!g.agregarRuta(new Ruta(origen, destino, minutos, costo))) ignoradas++;
             }
         } catch (NoSuchElementException e) {
