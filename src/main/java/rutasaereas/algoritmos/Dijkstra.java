@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package rutasaereas.algoritmos;
 
 import java.util.HashMap;
@@ -13,15 +9,12 @@ import rutasaereas.modelo.Criterio;
 import rutasaereas.modelo.Grafo;
 import rutasaereas.modelo.ResultadoRuta;
 import rutasaereas.modelo.Ruta;
-/**
- *
- * @author gomez
- */
+
 public class Dijkstra {
-     /** Elemento de la cola de prioridad: un aeropuerto con su distancia tentativa. */
+     // Elemento de la cola de prioridad: un aeropuerto con su distancia tentativa.
     private record Entrada(String codigo, int distancia) { }
 
-    /** Devuelve la ruta óptima según el criterio, o null si no existe ninguna ruta. */
+    // Devuelve la ruta óptima según el criterio, o null si no existe ninguna ruta. 
     public static ResultadoRuta rutaOptima(Grafo g, String origen, String destino, Criterio criterio) {
         Map<String, Integer> dist = new HashMap<>();
         Map<String, Ruta> anterior = new HashMap<>();

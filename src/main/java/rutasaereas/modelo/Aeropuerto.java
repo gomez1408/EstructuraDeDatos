@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package rutasaereas.modelo;
 
-/**
- *
- * @author gomez
- */
 public class Aeropuerto {
    
         private final String codigo;
@@ -28,7 +20,7 @@ public class Aeropuerto {
     public int getX()         { return x; }
     public int getY()         { return y; }
 
-    /** En el archivo los espacios vienen como "_"; aquí los devolvemos con espacios. */
+    //En el archivo los espacios vienen como "_"; aquí los devolvemos con espacios. 
     public String getCiudad() { return ciudad.replace('_', ' '); }
     public String getPais()   { return pais.replace('_', ' '); }
 

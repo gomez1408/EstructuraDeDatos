@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package rutasaereas.algoritmos;
 
 import java.util.ArrayDeque;
@@ -13,10 +9,7 @@ import java.util.Set;
 import rutasaereas.modelo.Grafo;
 import rutasaereas.modelo.ResultadoRuta;
 import rutasaereas.modelo.Ruta;
-/**
- *
- * @author gomez
- */
+
 public class BFS {
      public static ResultadoRuta menosEscalas(Grafo g, String origen, String destino) {
         Queue<String> cola = new ArrayDeque<>();

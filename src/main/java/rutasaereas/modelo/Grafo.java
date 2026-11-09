@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package rutasaereas.modelo;
 
 import java.util.ArrayList;
@@ -10,10 +6,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-/**
- *
- * @author gomez
- */
+
 public class Grafo {
     // LinkedHashMap conserva el orden del archivo (listados estables y predecibles)
     private final Map<String, Aeropuerto> aeropuertos = new LinkedHashMap<>();
@@ -37,7 +30,7 @@ public class Grafo {
 
     // ======================= Consultas =======================
 
-    /** O(1) promedio gracias al HashMap. */
+    //O(1) promedio gracias al HashMap. 
     public boolean existe(String codigo) {
         return codigo != null && aeropuertos.containsKey(codigo);
     }
@@ -54,7 +47,7 @@ public class Grafo {
         return new ArrayList<>(aeropuertos.keySet());
     }
 
-    /** Rutas salientes (activas) de un aeropuerto. Lista vacía si no existe. */
+    //Rutas salientes (activas) de un aeropuerto. Lista vacía si no existe. 
     public List<Ruta> getRutasSalientes(String codigo) {
         List<Ruta> lista = adyacencia.get(codigo);
         return lista == null ? new ArrayList<>() : lista;
@@ -88,7 +81,7 @@ public class Grafo {
         return null;
     }
 
-    /** Devuelve UNA ruta cancelada al grafo (lo usa el análisis de rutas críticas). */
+    // Devuelve UNA ruta cancelada al grafo (lo usa el análisis de rutas críticas).
     public void restaurarRuta(Ruta r) {
         if (canceladas.remove(r)) adyacencia.get(r.getOrigen()).add(r);
     }

@@ -25,7 +25,7 @@ import rutasaereas.modelo.Ruta;
  */
 public class AnimadorVuelo {
 
-    /** Lo que el panel necesita saber en cada cuadro. */
+    //Lo que el panel necesita saber en cada cuadro. 
     public interface Oyente {
         void actualizar(String tramo, String acumulado, double progresoTotal);
     }
@@ -71,13 +71,13 @@ public class AnimadorVuelo {
 
     // ======================= Controles =======================
 
-    /** Empieza a animar una ruta nueva desde el origen. */
+    // Empieza a animar una ruta nueva desde el origen. 
     public void iniciar(ResultadoRuta ruta) {
         this.tramos = ruta.getTramos();
         reiniciar();
     }
 
-    /** Vuelve al origen y arranca de nuevo. */
+    // Vuelve al origen y arranca de nuevo. 
     public void reiniciar() {
         if (tramos == null || tramos.isEmpty()) return;
         indice = 0;
@@ -91,7 +91,7 @@ public class AnimadorVuelo {
         timer.start();
     }
 
-    /** Alterna entre pausa y reanudar. Devuelve true si quedó pausado. */
+    //Alterna entre pausa y reanudar. Devuelve true si quedó pausado. 
     public boolean alternarPausa() {
         if (fase == Fase.TERMINADO) return false;
         pausado = !pausado;
@@ -104,7 +104,7 @@ public class AnimadorVuelo {
         return pausado;
     }
 
-    /** Detiene todo y oculta el avión. */
+    //Detiene todo y oculta el avión. 
     public void detener() {
         timer.stop();
         fase = Fase.TERMINADO;
@@ -117,7 +117,7 @@ public class AnimadorVuelo {
 
     // ======================= Lógica de cada cuadro =======================
 
-    /** Duración en pantalla de un tramo: proporcional a sus minutos reales. */
+    //Duración en pantalla de un tramo: proporcional a sus minutos reales. 
     private double duracion(Ruta r) {
         return 0.8 + r.getMinutos() / 120.0;
     }
@@ -169,7 +169,7 @@ public class AnimadorVuelo {
                 progreso(indice, p));
     }
 
-    /** Fracción del viaje completo (por minutos) ya recorrida. */
+    // Fracción del viaje completo (por minutos) ya recorrida. 
     private double progreso(int completos, double pTramo) {
         double total = 0, hecho = 0;
         for (int i = 0; i < tramos.size(); i++) {
@@ -181,7 +181,7 @@ public class AnimadorVuelo {
         return total == 0 ? 1 : hecho / total;
     }
 
-    /** Suma de los primeros "completos" tramos más lo que llevamos del actual. */
+    //Suma de los primeros "completos" tramos más lo que llevamos del actual. 
     private String acumulado(int completos, int minExtra, int costoExtra) {
         int min = minExtra, costo = costoExtra;
         for (int i = 0; i < completos; i++) {

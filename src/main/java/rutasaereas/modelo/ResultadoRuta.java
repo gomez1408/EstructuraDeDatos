@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package rutasaereas.modelo;
 
 import java.util.ArrayDeque;
@@ -10,10 +6,7 @@ import java.util.Deque;
 import java.util.List;
 import java.util.Map;
 
-/**
- *
- * @author gomez
- */
+
 public class ResultadoRuta {
    private final List<Ruta> tramos;
     private final int minutos;
@@ -48,7 +41,7 @@ public class ResultadoRuta {
     public int getMinutos()       { return minutos; }
     public int getCosto()         { return costo; }
 
-    /** Secuencia de códigos, por ejemplo "SJO → MIA → JFK". */
+    //Secuencia de códigos, por ejemplo "SJO → MIA → JFK". 
     public String getSecuencia() {
         if (tramos.isEmpty()) return "";
         StringBuilder sb = new StringBuilder(tramos.get(0).getOrigen());
@@ -56,7 +49,7 @@ public class ResultadoRuta {
         return sb.toString();
     }
 
-    /** Minutos en formato legible, por ejemplo "365 min (6 h 05 min)". */
+    //Minutos en formato legible, por ejemplo "365 min (6 h 05 min)". 
     public static String formatoMinutos(int minutos) {
         return String.format("%d min (%d h %02d min)", minutos, minutos / 60, minutos % 60);
     }
