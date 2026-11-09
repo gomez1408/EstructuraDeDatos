@@ -7,7 +7,7 @@ duración (minutos) y costo (dólares).
 **Integrantes:** 
 
 Alisson Yulieth Cascante Chaves
-Andrey Gomez 
+Andrey Gomez Alfaro
 
 ## Tecnologías
 
